@@ -12,28 +12,24 @@
     box-sizing: border-box;
     font-family: 'montserrat',sans-serif;
     font-weight: 500;
-    position: relative;
 }
 
 /* navbar */
 .navbar{
-    padding: 5px 0 5px 0;
+    padding: 10px 100px 10px 100px;
     background-color: var(--warning-color);
-}
-
-.navbar-nav{
     display: flex;
-    justify-content: space-between;
-    margin: 5px 100px 5px 100px;
+    justify-content: space-between;     
     align-items: center;
-    
+    position: absolute;
+    width: 100%;
 }
 
-.navbar-brand{
+.navbar__brand {
     cursor: pointer;
 }
 
-.button-navbar{
+.navbar__button {
     padding: 15px;
     border: none;
     background-color: var(--secondary-color);
@@ -45,45 +41,46 @@
     transition: 0.3s;
 }
 
-.button-navbar:hover{
+.navbar__button:hover{
     background-color: #2550db;
 }
 /* end navbar */
 
-/* hero-section */
-.jumbotron{
+/* jumbotron */
+.jumbotron {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    gap: 50px;
     background-image: linear-gradient(94deg, rgba(0,211,255,1) 0%, #6399fc 52%, rgba(0,9,36,1) 100%);
-    padding-bottom: 45%;
+    height: 100vh;
+    padding-top: 70px;
 }
 
-.title-jumbo{
+.jumbotron__title {
     font-size: 50px;
-    position: absolute;
-    top: 25%;
     text-align: center;
     color: white;
     font-weight: 600;
 }
 
-.input-jumbo{
-    display: block;
-    position: absolute;
-    top: 70%;
-    margin: 0 10% 0 0;
-    border: none;
-    padding: 18px 15% 18px 12px;
-    font-size: 18px;
-    border-radius: 5px;
+.jumbotron__inputbtn {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-.button-jumbo{
+.jumbotron__input {
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.jumbotron__button {
     transition: 0.3s;
-    position: absolute;
-    top: 70%;
-    padding: 18px;
-    margin: 0 0 0 34%;
+    padding: 20px;
     border: none;
     background-color: rgb(38, 87, 247,0.5);
     color: rgb(255, 255, 255,0.6);
@@ -91,17 +88,18 @@
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-
 }
 
-.button-jumbo:hover{
+.jumbotron__button:hover{
     background-color: #2550db;
+    color: #fff;
 }
-/* end hero-section */
+/* jumbotron */
 
 /* utilities */
 .utilities{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     gap: 5%;
     font-size: 20px;
@@ -109,85 +107,98 @@
     background-color: var(--warning-color);
 }
 
-.column{
+.utilities__item{
     text-align: center;
 }
 
-.column i{
+.utilities__item i{
     font-size: 80px;
     margin-bottom: 25px;
     color: var(--secondary-color);
 }
 
-.title{
+.utilities__title{
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.desc{
+.utilities__desc{
     font-weight: 300
 }
 /* end utilities */
 
-/* grid-picture */
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* card */
+.container{
+    display: flex;
+    flex-direction: column;
 }
 
-.grid-item{
-    padding: 20px;
-    text-align: left;
-    margin-top: 25%;
-    margin-left: 10px;
+.card{
+    display: flex;
 }
 
-img{
+.card img {  
     background-size: cover;
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
-    margin: 0 0 -5px 0;
 }
 
-.title-grid1{
-    font-size: 35px;
+.card__item-left{
+    flex-direction: row;
+}
+
+.card__item-right{
+    flex-direction: row-reverse;
+}
+
+.card__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 10px;
+    padding: 20px;
+    margin: 0 0 10px;
 }
 
-.desc-grid1{
+.card__text p{
     font-weight: 300
 }
-/* end grid-picture */
+/* end card*/
 
 /* testimonial */
 .testimonial{
     background-color: var(--warning-color);
     text-align: center;
     font-size: 25px;
-    padding-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
 }
 
-.title-testi{
+.testimonial__container{
+    display: flex;
+    flex-direction: row; 
+}
+
+.testimonial__titleFirst{
+    padding-bottom: 50px;
     font-weight: 600;
-    margin-bottom: 10px;
 }
 
-.desc-testi{
+.testimonial__desc{
     font-weight: 300
 }
 
-.column-testi{
-    font-family: 'jost',sans-serif;
+.testimonial__title{
     display: flex;
     justify-content: center;
-    gap: 5%;
     font-size: 20px;
-    padding: 10% 5% 10% 5%;
-    font-family: 'jost',sans-serif;
+    padding-bottom: 10px
 }
 
-.pic-testi{
+.testimonial__picture{
     border-radius: 50%;
     background-size: cover;
     height: 200px;
@@ -200,39 +211,40 @@ img{
 /* end testimonial */
 
 /* subscription */
-.subscription{
+.subscription__container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-image: linear-gradient(94deg, rgba(0,211,255,1) 0%, #6399fc 52%, rgba(0,9,36,1) 100%);
-    padding-bottom: 25%;
+    padding-bottom: 100px;
+    gap: 30px;
 }
 
-.title-subsc{
+.subscription__title{
+    padding-top: 100px;
     font-size: 30px;
-    position: absolute;
-    top: 35%;
     text-align: center;
     color: white;
     font-weight: 600;
 }
 
-.input-subsc{
-    display: block;
-    position: absolute;
-    top: 55%;
-    margin: 0 10% 0 0;
-    border: none;
-    padding: 18px 15% 18px 12px;
-    font-size: 18px;
-    border-radius: 5px;
+.subscription__textbtn{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
-.button-subsc{
+.subscription__text{
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    padding-right: 150px;
+    padding-left: 10px;
+}
+
+.subscription__button{
+    padding: 20px;
     transition: 0.3s;
-    position: absolute;
-    top: 55%;
-    padding: 18px;
-    margin: 0 0 0 34%;
     border: none;
     background-color: rgb(38, 87, 247,0.5);
     color: rgb(255, 255, 255,0.6);
@@ -240,11 +252,11 @@ img{
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-
 }
 
-.button-subsc:hover{
+.subscription__button:hover{
     background-color: #2550db;
+    color: #fff;
 }
 /* end-subscription */
 
@@ -256,17 +268,17 @@ footer{
     padding: 70px;
 }
 
-small{
+.footer__link small{
     margin-left: 10px;
     color: #7c7c7c;
 }
 
-.link-footer a{
+.footer__link a{
     margin: 10px;
     font-size: 15px;
 }
 
-.social-icons{
+.Footer__media{
     display: flex;
     justify-content: center;
     font-size: 30px;
@@ -279,3 +291,75 @@ i{
 }
 
 /* end footer */
+
+@media screen and (max-width: 767px){
+    .navbar {
+        padding: 10px 35px 10px 35px;
+    }
+
+    .jumbotron__title{
+        font-size: 38px;
+    }
+
+    .jumbotron__inputbtn{
+        flex-direction: column;
+        
+    }
+
+    .jumbotron__input{
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    .jumbotron__button{
+        width: 90%;
+        margin: auto;
+    }
+
+    .utilities{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .card{
+        flex-direction: column;
+    }
+
+    .card img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card__text{
+        align-items: flex-start;
+        gap: 10px; 
+    }
+
+    .testimonial__container{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .testimonial__titleFirst{
+        font-size: 30px;
+    }
+
+    .subscription__text{
+        margin-left: 50px;
+        padding-right: 100px;
+    }
+
+    .subscription__button{
+        margin-right: 50px;
+    }
+
+    footer{
+        padding: 50px;
+        flex-direction: column;
+    }
+
+    .footer__media i{
+      font-size: 25px;
+      padding: 15px;
+    }
+  } 
