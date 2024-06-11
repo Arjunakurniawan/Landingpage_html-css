@@ -275,19 +275,11 @@ footer{
 
 .footer__link a{
     margin: 10px;
-    font-size: 15px;
 }
 
-.Footer__media{
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    gap: 20px;
-    color: var(--secondary-color);
-}
-
-i{
-    color: var(--secondary-color);
+.footer__media i{
+   font-size: 30px;
+   padding: 10px;
 }
 
 /* end footer */
